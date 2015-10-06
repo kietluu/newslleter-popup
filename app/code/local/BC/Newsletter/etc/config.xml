@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <BC_Newsletter>
+            <version>1.0.0</version>
+        </BC_Newsletter>
+    </modules>
+
+    <global>
+        <blocks>
+            <bc_newsletter>
+                <class>BC_Newsletter_Block</class>
+            </bc_newsletter>
+        </blocks>
+
+        <resources>
+            <bc_newsletter_setup>
+                <setup>
+                    <module>BC_Newsletter</module>
+                </setup>
+            </bc_newsletter_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <bc_newsletter module="bc">
+                    <file>bc_newsletter.xml</file>
+                </bc_newsletter>
+            </updates>
+        </layout>
+    </frontend>
+
+    <default>
+        <newsletter_section>
+            <newsletter_group>
+                <newsletter_field>86400</newsletter_field>
+            </newsletter_group>
+        </newsletter_section>
+    </default>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <newsletter_section translate="title">
+                                            <title>My Section</title>
+                                            <sort_order>100</sort_order>
+                                        </newsletter_section>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

@@ -1,0 +1,40 @@
+<form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+	<input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email"
+		   id="newsletter"
+		   title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>"
+		   class="input-text required-entry validate-email"
+		   style="width: 130px;"/>
+	<button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>"
+			class="btns">
+		<?php echo $this->__('Subscribe') ?></button>
+</form>
+
+<script type="text/javascript">
+	//<![CDATA[
+	var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+
+	jQuery(function () {
+		var check_cookie = "<?php echo Mage::getModel('core/cookie')->get('bc_newsletter_popup'); ?>";
+		if (check_cookie != 1) {
+			jQuery(".highslide-dimming").fadeIn();
+			jQuery('#esns_background_layer').fadeIn();
+			<?php
+				$seconds = Mage::getStoreConfig('newsletter_section/newsletter_group/newsletter_field');
+				Mage::getModel('core/cookie')->set('bc_newsletter_popup', 1, $seconds*1);
+			?>
+		}
+
+		jQuery('#highslide-wrapper-0').css('left', (jQuery(document).width() / 2 - 248 ) + 'px');
+		jQuery('#btn-close-popup').click(function () {
+			jQuery('#esns_background_layer').fadeOut();
+			jQuery(".highslide-dimming").fadeOut();
+		});
+		jQuery('#sign-up-widget').click(function () {
+			jQuery(".highslide-dimming").fadeIn();
+			jQuery('#esns_background_layer').fadeIn();
+		});
+	});
+
+	jQuery.noConflict();
+	//]]>
+</script>

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <newsletter_tab translate="label">
+            <label>BLUECOM</label>
+            <sort_order>100</sort_order>
+        </newsletter_tab>
+    </tabs>
+    <sections>
+        <newsletter_section translate="label">
+            <label>Newsletter</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>newsletter_tab</tab>
+            <groups>
+                <newsletter_group translate="label">
+                    <label>Config</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <newsletter_field translate="label comment">
+                            <label>Seconds Expire Cookie</label>
+                            <comment>Ex: 1day = 86400</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </newsletter_field>
+                    </fields>
+                </newsletter_group>
+            </groups>
+        </newsletter_section>
+    </sections>
+</config>
